@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+
+<body>
+<div>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            letter-spacing: normal;
+            font-size: 1.2rem;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px 20px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        caption {
+            caption-side: top;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <table>
+        <caption>
+            Car list
+        </caption>
+
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Price</th>
+        </tr>
+
+        <tr th:each="car : ${carList}">
+            <td th:text="${car.getBrand()}"></td>
+            <td th:text="${car.getModelName()}"></td>
+            <td th:text="${car.getPrice()}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

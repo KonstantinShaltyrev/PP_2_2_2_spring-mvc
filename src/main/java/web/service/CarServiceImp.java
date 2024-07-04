@@ -24,8 +24,8 @@ public class CarServiceImp implements CarService {
     }
 
     @Override
-    public List<Car> filterCars(List<Car> cars, int numbers) {
+    public List<Car> filterCars(int numbers) {
         int num = (numbers < 0) ? 5 : numbers;
-        return cars.stream().limit(num).collect(Collectors.toList());
+        return carDao.getCars().stream().limit(num).collect(Collectors.toList());
     }
 }
